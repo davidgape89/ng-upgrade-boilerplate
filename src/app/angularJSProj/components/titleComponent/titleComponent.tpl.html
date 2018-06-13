@@ -1,0 +1,9 @@
+<div>
+  <h1 ng-click="$ctrl.onClick()">This is the title component</h1>
+
+  <!-- Kebab case must be used with Angular component's inputs and outputs-->
+  <app-super-duper
+    [some-input]="$ctrl.randomObject"
+    (some-output)="$ctrl.eventListener($event)"
+    ></app-super-duper>
+</div>
