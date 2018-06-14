@@ -3,9 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-proj": {
+    "account": {
       "root": "",
-      "sourceRoot": "src/account/",
+      "sourceRoot": "src/classroom/account/",
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,16 +17,16 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist",
-            "index": "src/account/index.html",
-            "main": "src/account/main.ts",
-            "tsConfig": "src/account/tsconfig.app.json",
-            "polyfills": "src/account/polyfills.ts",
+            "index": "src/classroom/account/index.html",
+            "main": "src/classroom/account/main.ts",
+            "tsConfig": "src/classroom/account/tsconfig.app.json",
+            "polyfills": "src/classroom/account/polyfills.ts",
             "assets": [
-              "src/account/assets",
-              "src/account/favicon.ico"
+              "src/classroom/account/assets",
+              "src/classroom/account/favicon.ico"
             ],
             "styles": [
-              "src/account/styles.less"
+              "src/classroom/account/styles.less"
             ],
             "scripts": []
           },
@@ -43,8 +43,8 @@
               "buildOptimizer": true,
               "fileReplacements": [
                 {
-                  "replace": "src/account/environments/environment.ts",
-                  "with": "src/account/environments/environment.prod.ts"
+                  "replace": "src/classroom/account/environments/environment.ts",
+                  "with": "src/classroom/account/environments/environment.prod.ts"
                 }
               ]
             }
@@ -53,34 +53,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-proj:build"
+            "browserTarget": "account:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-proj:build:production"
+              "browserTarget": "account:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-proj:build"
+            "browserTarget": "account:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/account/test.ts",
+            "main": "src/classroom/account/test.ts",
             "karmaConfig": "./karma.conf.js",
-            "polyfills": "src/account/polyfills.ts",
-            "tsConfig": "src/account/tsconfig.spec.json",
+            "polyfills": "src/classroom/account/polyfills.ts",
+            "tsConfig": "src/classroom/account/tsconfig.spec.json",
             "scripts": [],
             "styles": [
-              "src/account/styles.less"
+              "src/classroom/account/styles.less"
             ],
             "assets": [
-              "src/account/assets",
-              "src/account/favicon.ico"
+              "src/classroom/account/assets",
+              "src/classroom/account/favicon.ico"
             ]
           }
         },
@@ -88,8 +88,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/account/tsconfig.app.json",
-              "src/account/tsconfig.spec.json"
+              "src/classroom/account/tsconfig.app.json",
+              "src/classroom/account/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -107,7 +107,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "angular-proj:serve"
+            "devServerTarget": "account:serve"
           }
         },
         "lint": {
@@ -124,11 +124,11 @@
       }
     }
   },
-  "defaultProject": "angular-proj",
+  "defaultProject": "account",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "css"
+      "styleext": "less"
     },
     "@schematics/angular:directive": {
       "prefix": "app"
